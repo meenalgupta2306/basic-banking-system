@@ -1,0 +1,224 @@
+
+#logo img{
+    height: 50px;
+    filter: invert(1);
+}
+
+#navbar{
+    padding-bottom: 1px;
+    background-color: black;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 9px 0;
+    /* justify-content: center; */
+}
+#navbar li{
+    list-style: none;
+    /* margin-left: 30px; */
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.7vw;
+    padding: 7px 15px;
+    color: white;
+}
+#navbar li a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(230, 223, 223);
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+}
+
+  
+/* #navbar{
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    background-color: black;
+}
+.spark{
+    filter: invert(1);
+    height: 3.5vw;
+    margin-left: 25px;
+    border-radius: 53px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#navbar ul{display: flex;}
+#navbar ul li{
+    list-style: none;
+} */
+
+#home{
+    flex-direction: column;
+    justify-content: center;
+}
+/* #home::before{
+    content: "";
+    background: url("bg.jpg") no-repeat center center/cover;
+    position: absolute;
+    height: 650px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.90;
+} */
+#home{
+    background-image: url("bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.card{
+    display: flex;
+}.cus{
+    height: 6vw;
+    border-radius: 56px;
+}
+
+#show{background-color: #fff2f2;}
+#showCustomer{width: 100%;}
+#view{
+    margin-top: 73px;
+    padding: 13px 10px;
+    background-color: black;
+    border: 2px solid;
+}
+.view{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.view:hover{
+    text-decoration: underline;
+}
+.h1{
+    width: 500px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  position: relative;
+  animation: example 7s infinite;
+  margin-top: 60px;
+}
+@keyframes example {
+    0%   {background-color:rgb(253, 66, 66); left:0px; top:0px; color: white;}
+    25%  {background-color:rgb(255, 255, 101); left:500px; top:0px; color: black;}
+  }
+.shift{
+    font-size: 40px;
+    text-align: center;
+}
+.table{
+    width: 73%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 56px;
+}
+td, th{
+    font-size: 20px;
+}
+tr:nth-child(even){background-color: #a585ca}
+tr:nth-child(odd){background-color: #d1aff1}
+tr:hover{background-color: #837e7e}
+#show{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 153px;
+    border: 2px solid;
+    padding: 64px 87px;
+}
+label{
+    font-size: 25px;
+    margin-bottom: 16px;
+}
+input{
+    font-size: 21px;
+}
+#online{
+    display: inline-block;
+    margin-left: 12%;
+    font-size: 3.4vw;
+    color: #04045d;
+    font-weight: bold;
+}
+.adv{
+    margin-left: 14px;
+    font-size: 1.9vw;
+    font-weight: bold;
+}
+#card{margin-left: 23%;}
+.head{
+    padding: 2px 24px;
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: white;
+}
+.head:hover{
+    border: 2px solid black;
+    background-color: white;
+    color: orange;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+}
+#footer{
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.5vw;
+    padding: 13px 0px;
+}
+/* <tbody>
+            <tr>
+                <th scope="row"><%= name %></th>
+                <th scope="row"><%= from %></th>
+                <th scope="row"><%= amount %></th>
+            </tr>
+        
+    </tbody> */
+    /* res.render('transaction',{
+        name,from,amount
+    }) */
+
+/*     <section id="home">
+        <div id="card">
+            <div class="card">
+                <img class="cus" src="\static\cus.jpg" alt="">
+                <div>
+                    <button id="view"><a class="view" href="\view">Our Customers</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="card">
+            <div class="card">
+                <div>
+                    <button id="view"><a class="view" href="\transaction">Transaction history</a></button>
+                </div>
+                <img class="cus" src="\static\dd.jpg" alt="">
+            </div>
+        </div>
+    </section> */
+
+    /* <nav id="navbar">
+        
+            <img class="spark" src="\static\logo.jpg" alt="">
+            <a href="\" class="head">Home</a>
+            <a href="\view" class="head">Our Customers</a>
+            <a href="\transaction" class="head">Transaction history</a>
+ */
