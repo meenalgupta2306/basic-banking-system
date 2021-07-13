@@ -1,4 +1,5 @@
 fetch('https://meenalnetbanking.herokuapp.com/transfer')
+/* fetch('http://localhost:4000/transfer') */
 .then((apidata)=>{
     console.log(apidata)
     return apidata.json();
@@ -14,13 +15,19 @@ fetch('https://meenalnetbanking.herokuapp.com/transfer')
         let row = table.insertRow();
         for (k in element) {
             if(k=="_id"){
-                let cell = row.insertCell()
-                let text=document.createTextNode(i)
+                var cell = row.insertCell()
+                var text=document.createTextNode(i)
                 cell.appendChild(text)
             }  
             if( k=="from"||k=="name"||k=="amount"){
-                let cell = row.insertCell()
-                let text = document.createTextNode(element[k]);
+                var cell = row.insertCell()
+                var text = document.createTextNode(element[k]);
+                cell.appendChild(text);
+            }
+            if(k=="date"){
+                var date=((element.date).toString().replace('Z', '').replace('T', ' '))
+                var cell = row.insertCell()
+                var text = document.createTextNode(date);
                 cell.appendChild(text);
             }
         }

@@ -1,11 +1,10 @@
 
 #logo img{
-    height: 50px;
+    height: 74px;
     filter: invert(1);
 }
 
 #navbar{
-    padding-bottom: 1px;
     background-color: black;
     font-family: 'Gloria Hallelujah', cursive;
 }
@@ -14,19 +13,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 9px 0;
-    /* justify-content: center; */
+    margin: 0 0;
 }
-#navbar li{
-    list-style: none;
-    /* margin-left: 30px; */
-}
+#navbar li{list-style: none;}
 
 #navbar li a{
     text-decoration: none;
     font-weight: bold;
     font-size: 1.7vw;
-    padding: 7px 15px;
+    padding: 7px 40px;
     color: white;
 }
 #navbar li a:hover{
@@ -40,40 +35,12 @@
 }
 
   
-/* #navbar{
-    align-items: center;
-    top: 0px;
-    width: 100%;
-    background-color: black;
-}
-.spark{
-    filter: invert(1);
-    height: 3.5vw;
-    margin-left: 25px;
-    border-radius: 53px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-#navbar ul{display: flex;}
-#navbar ul li{
-    list-style: none;
-} */
-
 #home{
     flex-direction: column;
     justify-content: center;
 }
-/* #home::before{
-    content: "";
-    background: url("bg.jpg") no-repeat center center/cover;
-    position: absolute;
-    height: 650px;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.90;
-} */
 #home{
-    background-image: url("bg.jpg");
+    background-image: url("./image/bg.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -103,29 +70,29 @@
     text-decoration: underline;
 }
 .h1{
-    width: 500px;
-  height: 40px;
-  background-color: red;
-  color: white;
   position: relative;
   animation: example 7s infinite;
-  margin-top: 60px;
 }
 @keyframes example {
-    0%   {background-color:rgb(253, 66, 66); left:0px; top:0px; color: white;}
-    25%  {background-color:rgb(255, 255, 101); left:500px; top:0px; color: black;}
+    0%   {left:0px; top:0px; color: white;}
+    25%  {left:40%; right: 50%; top:0px; color: black;}
   }
+
 .shift{
-    font-size: 40px;
+    display: inline-block;
+    font-size: 2.7vw;
     text-align: center;
+    background-color: red;
+    color: white;
 }
 .table{
-    width: 73%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
     max-width: 100%;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 56px;
 }
 td, th{
     font-size: 20px;
@@ -133,20 +100,6 @@ td, th{
 tr:nth-child(even){background-color: #a585ca}
 tr:nth-child(odd){background-color: #d1aff1}
 tr:hover{background-color: #837e7e}
-#show{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 153px;
-    border: 2px solid;
-    padding: 64px 87px;
-}
-label{
-    font-size: 25px;
-    margin-bottom: 16px;
-}
-input{
-    font-size: 21px;
-}
 #online{
     display: inline-block;
     margin-left: 12%;
@@ -184,41 +137,135 @@ input{
     font-size: 1.5vw;
     padding: 13px 0px;
 }
-/* <tbody>
-            <tr>
-                <th scope="row"><%= name %></th>
-                <th scope="row"><%= from %></th>
-                <th scope="row"><%= amount %></th>
-            </tr>
-        
-    </tbody> */
-    /* res.render('transaction',{
-        name,from,amount
-    }) */
+#icon{
+    background-color: rgb(135 131 184);
+}
+ 
+.in{
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-left: 18vw;
+    display: inline-block;
+    background-color: white;
+}
+#out{
+    display: flex;
+    flex-direction: row;
+}
+ 
+.in img{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 21vw;
 
-/*     <section id="home">
-        <div id="card">
-            <div class="card">
-                <img class="cus" src="\static\cus.jpg" alt="">
-                <div>
-                    <button id="view"><a class="view" href="\view">Our Customers</a></button>
-                </div>
-            </div>
-        </div>
-        <div id="card">
-            <div class="card">
-                <div>
-                    <button id="view"><a class="view" href="\transaction">Transaction history</a></button>
-                </div>
-                <img class="cus" src="\static\dd.jpg" alt="">
-            </div>
-        </div>
-    </section> */
+}
+.in a{
+    font-size: 1.5vw;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.press{
+    border-radius: 15px;
+    width: 22vw;
+    background-color: #6969eb;
+}
+.press:hover{
+    background-color: rgb(63, 63, 228);
+}
+.mySlides {display:none;}
+.content{display: inline-block;
+    margin-top: 11px;
+}
+#success{font-size: 52px;
+    text-align: center;}
 
-    /* <nav id="navbar">
-        
-            <img class="spark" src="\static\logo.jpg" alt="">
-            <a href="\" class="head">Home</a>
-            <a href="\view" class="head">Our Customers</a>
-            <a href="\transaction" class="head">Transaction history</a>
- */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 21px;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: 25px;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  #con {
+    margin: 50px 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    #navbar li a#navbar li a{font-size: 2.7vw;
+    padding: 6px 35px;}
+    #logo img{height: 35px;}
+    #logo{margin-left: -25px;}
+    .adv{font-size: 2.2vw;}
+    .mySlides{height: 320px;}
+    #footer{font-size: 2.5vw;}
+}
+
+@media only screen  and (max-width:700px) {
+    #navbar li a{font-size: 3.0vw;padding: 6px 6px};
+    #online{font-size: 7.4vw;}
+    .cus {height: 11vw;}
+    .adv {margin-left: 14px;
+        font-size: 4.0vw;}
+    .in a{font-size: 12px;}
+    .in img{width: 22vw;}
+    .mySlides{height: 140px;}
+    #footer {font-size: 2.8vw;}
+    .shift,.his{font-size: 5.7vw;}
+    #navbar li a:hover{
+        font-size: 11px;
+    }
+}

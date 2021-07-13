@@ -15,7 +15,8 @@ const customersSchema={
 const historySchema={
     from: String,
     name: String,
-    amount: Number
+    amount: Number,
+    date: { "type": Date, "default": Date.now }
 }
 app.use('/static', express.static('static'))
 const customer= mongoose.model('customer',customersSchema);
@@ -42,23 +43,24 @@ app.get('/transaction',(req,res)=>{
 })
 
 app.post('/transfer',async(req,res)=>{
+    const name=req.body.name
+    const from=req.body.from
+    const amount=req.body.amount
     try{
-        if(req.body.amount!=0){
+        const senderamount= await customer.findOne({name: from});
+        if(amount>0 && amount<senderamount.balance && name!=from){
             var historydata= new historymodel(req.body)
             await historydata.save(function(err, doc){
                 if (err) return console.log(err)
             })
         }
-        if(req.body.amount==0)
+        if(amount==0 || amount<0 || senderamount.balance<amount)
             res.redirect('/view')
         else
-            res.redirect('transaction')
+            res.redirect('/transaction')
     }catch{
         console.log("could not save")
     }
-    const name=req.body.name
-    const from=req.body.from
-    const amount=req.body.amount
     try{
         await customer.findOneAndUpdate({
             name: name,

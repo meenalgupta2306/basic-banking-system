@@ -4,18 +4,30 @@ function show(name,email,balance){
     document.getElementById("from").value=name
     document.getElementById("email").innerHTML=email
     document.getElementById("balance").innerHTML=balance
+    localStorage.setItem("balance",balance)
     table1=document.getElementById("viewCustomers")
     table2=document.getElementById("showCustomer")
-    form=document.getElementById("show")
+    form=document.getElementById("con")
     table1.style.display="none";
     table2.style.display="inline-table";
-    form.style.display="table";
+    form.style.display="block";
    
 }
 function success(){
     var amount= document.getElementById("amount").value
     if(amount== 0 ){
-        alert("Transaction failed");
+        alert("Cannot transfer 0 amount");
+        document.getElementById("success").innerHTML="Transaction failed"
+        return false;
+    }
+    if(amount< 0 ){
+        alert("Please enter a non-negative amount");
+        document.getElementById("success").innerHTML="Transaction failed"
+        return false;
+    }
+    if(amount> localStorage.getItem("balance") ){
+        alert("Insufficient balance amount");
+        document.getElementById("success").innerHTML="Transaction failed"
         return false;
     }
     document.getElementById("success").innerHTML="Transaction Successful"
