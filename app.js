@@ -62,18 +62,21 @@ app.post('/transfer',async(req,res)=>{
         console.log("could not save")
     }
     try{
-        await customer.findOneAndUpdate({
-            name: name,
-        },{
-            $inc: {balance: amount}
+        const senderamount= await customer.findOne({name: from});
+        if(amount<senderamount.balance){
+            await customer.findOneAndUpdate({
+                name: name,
+            },{
+                $inc: {balance: amount}
+                
+            })
+            await customer.findOneAndUpdate({
+                name: from
+            },{
+                $inc: {balance: - amount}
             
-        })
-        await customer.findOneAndUpdate({
-            name: from
-        },{
-            $inc: {balance: - amount}
-        
-        })
+            })
+        }
     }catch{
         res.send("cannot Transact right now. Please try again later")
     }
