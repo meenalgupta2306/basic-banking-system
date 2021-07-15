@@ -10,10 +10,11 @@ function show(name,email,balance){
     form=document.getElementById("con")
     table1.style.display="none";
     table2.style.display="inline-table";
-    form.style.display="block";
-   
+    form.style.display="block"; 
 }
 function success(){
+    balance=document.getElementById("balance").innerHTML
+    console.log(balance)
     var amount= document.getElementById("amount").value
     if(amount== 0 ){
         alert("Cannot transfer 0 amount");
@@ -25,7 +26,7 @@ function success(){
         document.getElementById("success").innerHTML="Transaction failed"
         return false;
     }
-    if(amount> localStorage.getItem("balance") ){
+    if(amount > parseInt(balance)){
         alert("Insufficient balance amount");
         document.getElementById("success").innerHTML="Transaction failed"
         return false;
